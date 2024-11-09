@@ -14,6 +14,13 @@ public class RunMatrix {
     System.out.println("Printing matrix with default values: ");
 
 
-
+    System.out.println("Populating matrix...matrix populated");
+    int counter = 1;
+    for(int row = 0; row < size;){
+      for(int col = 0; col < size; col++){
+        matrix[row][col] = counter++;
+      }
+    }
+    System.out.println("Printing matrix:");
   }
 }
