@@ -1,5 +1,6 @@
 import java.util.Scanner;
 
+
 public class RunMatrix {
   public static void main(String[] args) {
     Scanner input = new Scanner(System.in);
@@ -14,20 +15,20 @@ public class RunMatrix {
 
 
     System.out.println("\n Printing matrix with default values:");
-    table.IntializeMatrix();
-    table.PrintMatrix();
+    table.intializeMatrix();
+    table.printMatrix();
 
 
     System.out.println("\n Populating matrix...matrix populated");
-    table.PopulateMatrix();
+    table.populateMatrix();
     System.out.println("\n Printing matrix:");
-    table.PrintMatrix();
+    table.printMatrix();
 
 
     System.out.println("\n Flipping matrix...matrix flipped");
-    table.FlipMatrix();
+    table.flipMatrix();
     System.out.println("\n Printing flipped matrix:");
-    table.PrintMatrix();
+    table.printMatrix();
 
 
     input.close();

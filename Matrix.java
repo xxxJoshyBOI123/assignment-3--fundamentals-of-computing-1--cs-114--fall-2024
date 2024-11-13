@@ -6,7 +6,8 @@ public class Matrix {
     this.matrix = new int[size][size];
   }
 
-  public void IntializeMatrix() {
+
+  public void intializeMatrix() {
     for(int row = 0; row < this.matrix.length; row++) {
       for(int col = 0; col < this.matrix[row].length; col++) {
         matrix[row][col] = 0;
@@ -15,7 +16,7 @@ public class Matrix {
   }
 
 
-  public void PopulateMatrix() {
+  public void populateMatrix() {
     int value = 1;
     for(int row = 0; row < this.matrix.length; row++) {
       for(int col = 0; col < this.matrix[row].length; col++) {
@@ -25,10 +26,10 @@ public class Matrix {
   }
 
 
-  public void FlipMatrix() {
+  public void flipMatrix() {
     for(int row = 0; row < this.matrix.length; row++) {
       for(int col = 0; col < this.matrix[row].length; col++) {
-        if(this.IsDiagonal(row, col)) {
+        if(!this.isDiagonal(row, col)) { // highlight diagonal yellow
           int size = this.matrix[row].length - 1;
           swap(row, col, size - row, size - col);
         }  else {
@@ -45,19 +46,20 @@ public class Matrix {
     this.matrix[row2][col2] = temp;
   }
 
-  public boolean IsDiagonal(int row, int col) {
+
+  public boolean isDiagonal(int row, int col) {
     int maxIndex = this.matrix[row].length - 1;
     return col == (maxIndex - row);
   }
 
 
-  public void PrintMatrix() {
-    String ANSI_RESET = "\u001B[0m";
-    String ANSI_YELLOW = "\u001B[33m";
+  public void printMatrix() {
+    final String ANSI_RESET = "\u001B[0m";
+    final String ANSI_YELLOW = "\u001B[33m";
     for(int row = 0; row < this.matrix.length; row++) {
       for(int col = 0; col < this.matrix[row].length; col++) {
         int value = this.matrix[row][col];
-        if(this.IsDiagonal(row, col)) {
+        if(this.isDiagonal(row, col)) {
           System.out.printf("%s%d%s ", ANSI_YELLOW, value, ANSI_RESET);
         } else {
           System.out.printf("%d ", value);
